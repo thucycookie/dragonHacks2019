@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+<head>
+    <title>X</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<!-- Title -->	
+<div id="intro">
+  <h1>X</h1>
+      <span id="login-signup-buttons">
+        <span 
+          class="loginButton" onclick="location.href='/signin'">Log In
+        </span>
+        <button 
+          class="loginButton" onclick="location.href='/register'">Sign Up
+        </button>
+      </span>
+    <h3>Healthcare for tomorrow</h3>
+</div>
+
+<div id="map-intro">
+  <h2>Welcome</h2>
+</div>
+
+<div id = "container">
+
+	<!-- Info container for left side-->
+	<div id="div-info-left" style="display: none">
+		<h1>Rating</h1>
+		<!-- A field for rendering the star rating --> 
+	</div>
+
+	<!-- The Map -->
+	<!-- div id = "container" -->
+	<div id="map"></div>
+	<!--/div-->
+
+	<!-- Info container for right side-->
+	<div id="div-info-right" style="display: none"><h1>Review</h1></div>
+
+</div>
+
+<script src="map.js"></script>
+
+<div id="footer" class="center">
+    © X 2019
+</div>
+
+
+

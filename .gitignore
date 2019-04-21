@@ -1,0 +1,4 @@
+# Dont track the content of these folders
+node_modules/
+
+

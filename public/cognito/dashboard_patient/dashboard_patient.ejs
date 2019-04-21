@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<!--Cognito JavaScript-->
+<!--script src="../js/amazon-cognito-identity.min.js"></script>  
+<script src="../js/config.js"></script>
+<script src="../js/profile.js"></script>
+<script src="../../map.js"></script-->
+
+<!--This must be load so this HTML can access the user's name variable-->
+<!--For line 65-->
+
+<!--script src="../js/signInButton.js"></script-->
+
+<head>
+    <title>X</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="icon" href="favicon.ico" type="../../image/x-icon">
+</head>
+
+<!-- Title -->	
+<div id="intro">
+  <h1>Dashboard for patients</h1>
+    <div class="dropdown">
+      <span id="account-button">
+        <button
+          class="loginButton" id="dropdownMenuButton">Account
+        </button>
+	<div class="dropdown-content">
+	  <a href="/dashboard_patient">Home</a>
+    	  <a href="/setting">Setting</a>
+    	  <a href="/profile">Profile</a>
+          <a href="/signout">Sign out</a>
+	  <a href="/shareNotes">Share Your Medical Notes</a>
+	</div>
+	</span>	
+    </div>
+
+    <h3>Healthcare for tomorrow</h3>
+</div>
+
+<div id = "container">
+
+	<!-- Info container for all the shared notes-->
+	<div id="patient_notes"></div>
+	
+	<!-- Message -->
+	<h2><%= message %></h2>
+
+</div>
+
+<script src="../../map.js"></script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVNLNO0Kk7kGdFDE4t4zra-V8jSX96pZM&callback=initMap"></script>
+
+<div id="footer" class="center">
+    © X 2019 
+</div>
+
+<!-- Animated dot -->
+<canvas><script src="../../dotjs.js"></script></canvas>
+
+<!-- Make sure all scrip that loads getElementbyId is after the HTML code that contains that elementID or you will get null error -->
+<script type="text/javascript">
+        var data = "<%= data%>";
+        //since data here is a string separated by commas, we split it 
+	//to convert it into an array
+	data = data.split(",");
+        
+	str = '<table style="width:100%" ">';
+        str += '<tr>'
+        str += '<th>document ID</th> <th>Patient\'s ID</th> <th>Date generated</th> <th>Author</th> <th>Notes</th>'
+        str += '</tr>'
+
+        for(var i = 0; i < data.length; i+=5){
+                
+		if(data[i] !== ""){
+			str += '<tr>';
+                	str += '<td>' + data[i]  + '</td>' + '<td>' + data[i+1] + '</td>' + '<td>' + data[i+2].substring(5,15) + '</td>' + '<td>' + data[i+3] + '</td>' + '<td>' + data[i+4] + '</td>'
+			str += '</tr>'
+		}
+        }
+
+        str += '</table>';
+        console.log(str);
+        document.getElementById("patient_notes").innerHTML = str;
+    
+</script>
+

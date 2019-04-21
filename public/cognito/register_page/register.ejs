@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sign up form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="css/style1.css">
+</head>
+
+<body>
+  <div class="user">
+    <header class="user__header">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" alt="" />
+	<h1 class="user__title" id="titleheader">Sign up</h1>
+    	<h1 class="user__title" id="titleheader"><%= message %></h1>
+    </header>
+    
+    <form class="CreateUser form" action="/register" method="post">
+        <div class="form__group">
+            <input type="text" placeholder="First Name" class="form__input" id="Firstname" name="firstName"/>
+        </div>
+        
+	<div class="form__group">
+            <input type="text" placeholder="Last Name" class="form__input" id="Lastname" name="lastName"/>
+        </div>
+	
+	<div class="form__group">
+              <input type="text" placeholder="ID" class="form__input" id="ID" name="id"/>
+        </div>
+
+        <div class="form__group" >
+            <input type="email" placeholder="Email" class="form__input" id="Email" name="email"/>
+        </div>
+
+	<div class="form__group">
+              <input type="text" placeholder="Doctor or Patient" class="form__input" id="dr_or_patient" name="dr_or_patient"/>
+        </div>        
+
+	<div class="form__group">
+              <input type="password" placeholder="Last 4 digits of your social security" class="form__input" id="social_security" name="social_security"/>
+        </div>
+	
+        <div class="form__group">
+            <input type="password" placeholder="Password" class="form__input password" id="Password"name="password"/>
+        
+	<div class="form__group">
+            <input type="password" placeholder="Confirm Password" class="form__input" id="Confirmation Password" name="confirmPassword"/>
+        </div>
+      
+		<button class="btn" type="submit" value="Sign Up">Register</button>
+	</form>
+
+    <div class="flex-col-c p-t-155">
+      <span class="txt1 p-b-17">
+        Or Log In Using
+      </span>
+      <a href="/signin" class="txt2" onclick="location.href='/signin'">
+        Sign In
+      </a>
+    </div>
+
+</div>
+
+</body>
+
+</html>

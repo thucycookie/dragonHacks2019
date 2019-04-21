@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Doctor Note Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="css/style1.css">
+</head>
+
+<!-- Title -->
+<div id="intro">
+  <h1>Dashboard for doctors</h1>
+    <div class="dropdown">
+      <span id="account-button">
+        <button
+          class="loginButton" id="dropdownMenuButton">Account
+        </button>
+        <div class="dropdown-content">
+	    <a href="/dashboard_doctor">Home</a>
+            <a href="/setting">Setting</a>
+            <a href="/profile">Profile</a>
+            <a href="/signout">Sign out</a>
+        </div>
+      </span>
+    </div>
+
+    <h3>Healthcare for tomorrow</h3>
+</div>
+
+<body>
+  <div class="container">
+    <header class="user__header">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg" alt="" />
+	<h1 class="user__title" id="titleheader">Diagnosis</h1>
+    	<!-- h1 class="user__title" id="titleheader"><%= message %></h1 -->
+    </header>
+    
+    <form class="CreateUser form" action="/diagnosis_submit" method="post">
+        <div class="form__group">
+            <input type="text" placeholder="Patient ID" class="form__input" id="patientId" name="patientId"/>
+        </div>
+        
+	<div class="form__group">
+            <input type="text" placeholder="Diagnostic note" class="form__input" id="notes" name="notes"/>
+        </div>
+	
+	<button class="btn" type="submit" value="Submit diagnostic form">Submit diagnostic form</button>
+	</form>
+</div>
+
+</body>
+
+</html>
