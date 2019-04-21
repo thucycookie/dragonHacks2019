@@ -133,9 +133,8 @@ app.route('/register')
 		social_security: req.body.social_security
 	})
         .then(user => {
-            req.session.user = user.dataValues;
-	    
-	    res.render(__dirname + '/public/cognito/register_page/register.ejs', {message: "Please check your email for a verification link."});
+	    res.redirect("/signin");
+	    //res.redirect(__dirname + '/public/cognito/register_page/register.ejs', {message: "Please check your email for a verification link."});
 	
 	})
         .catch(error => {
@@ -290,6 +289,7 @@ app.post('/diagnosis_submit',(req, res) => {
 	    queries.addPermissions(doctor_id, permissions, documentId);	    
 	    queries.addPermissions(patient_id, permissions, documentId);
             console.log("Permission added successfully");
+	    //res.redirect("/dashboard_doctor");
 	})
         .catch(error => {
 	    console.log(error);
